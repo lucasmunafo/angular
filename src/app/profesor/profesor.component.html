@@ -1,0 +1,47 @@
+<h1>Componente Profesor</h1>
+<article>
+    <p>Nombre: {{nombre}}.</p>
+    <p>Edad: {{edad}}.</p>
+
+    <div *ngIf="casado">
+        Casado
+    </div>
+        <p *ngIf="casado;else soltero">Estado Civil: casado</p>
+         <ng-template #soltero><p>Estados Civil: soltero</p></ng-template>
+ <p>Trabajos:</p>
+    <ul>
+      <li *ngFor="let i of trabajos">{{i}}</li>
+    </ul>
+
+    <h3>Modelo</h3>
+    <ul>
+      <li>{{profesor.nombre}}</li>
+      <li>{{profesor.edad}}</li>
+      <li>{{profesor.materia}}</li>
+      <li *ngIf="profesor.contratado;else noContratado">Contratado</li>
+      <ng-template #noContratado><li>No Contratado</li></ng-template>
+    </ul>
+
+    <h3>Nuevo Modelo como Lista</h3>
+    <ul>
+      <li *ngFor="let i of profesorado; let x = index">
+        <strong>Profesor{{x+1}}</strong>
+        <ul>
+            <li>{{i.nombre}}</li>
+            <li>{{i.edad}}</li>
+            <li>{{i.materia}}</li>
+            <li *ngIf="i.contratado;else noContratado">Contratado</li>
+            <ng-template #noContratado><li>No Contratado</li></ng-template>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Switch-Case</h3>
+    <ul [ngSwitch]="color">
+    <li *ngSwitchCase="'red'" [ngStyle]="{'color': color}">Rojo</li>
+    <li *ngSwitchCase="'blue'" [ngStyle]="{'color': color}">Azul</li>
+    <li *ngSwitchCase="'green'"[ngStyle]="{'color': color}">Verde</li>
+    <li *ngSwitchDefault style="color:black">Negro</li>
+            
+  </ul>
+</article>
