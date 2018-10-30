@@ -1,1 +1,11 @@
-<app-profesor></app-profesor>
+<hr>
+<nav>
+    <a [routerLink]="[ '/fruta']" [routerLinkActive]="['activado']">Fruta</a>
+    -
+    <a [routerLink]="[ '/profesor']" [routerLinkActive]="['activado']">Profesor</a>
+</nav>
+<hr>
+<!-- <app-profesor></app-profesor>
+<app-fruta></app-fruta> -->
+
+<router-outlet></router-outlet>

@@ -18,6 +18,9 @@ export class ProfesorComponent implements OnInit {
     public profesorado: Array<Profesor>;
     public color:string;
 
+    //PARA BOTON ADMIN
+    public admin: boolean;
+
 
   constructor(){
     this.nombre= 'Lucas';
@@ -34,9 +37,16 @@ export class ProfesorComponent implements OnInit {
     ]
 
     this.color='red';
+
+    this.admin=false;
 }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    console.log(this.profesor);
   }
 
-}
+  pulsarBoton(){
+    console.log("Hemos pulsado el boton");
+    this.admin=!this.admin;
+    }
+  }

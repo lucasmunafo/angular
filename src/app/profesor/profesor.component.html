@@ -45,3 +45,16 @@
             
   </ul>
 </article>
+
+<h3>Evento CLick</h3>
+<button (click)="pulsarBoton()">Cambiar de usuario</button>
+<div *ngIf="admin; else noAdmin">
+    <strong>Eres el Administrador</strong>
+</div>
+<ng-template #noAdmin>
+  <div>
+    <strong>No eres el Administrador</strong>
+
+  </div>
+  
+</ng-template>
