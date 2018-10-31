@@ -1,0 +1,10 @@
+@Component se lo llama decorador.
+
+selector normalmente lleva app-<nombre del componente>
+
+
+en app.module se tienen que declarar todos los componentes nuevos adentro de 'declarations'
+
+
+para hacer un if en la etiqueta ngif
+*ngfor para crear un for

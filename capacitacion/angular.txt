@@ -1,0 +1,58 @@
+------------------
+
+jasmin: sirve para testear, intenta rompér le codigo para posibles errores.
+
+------------------
+
+gitignore: los archivos que no vamos a subir al git
+
+------------------
+
+tslint: es el inspector de codigo a medida que escribimos
+
+------------------
+
+para cambiar el puerto ng serve--port <puerto>
+
+------------------
+
+snippets genera atajos como autocoñpletar
+bracket pair le da color a la misma llave
+
+------------------
+
+nombre.component.ts -> va  a se rle controlador
+html junto con el css va a ser la vista
+
+------------------
+
+
+selector: le va a dar el nombre a la etiqueta que se va a invocar desde el index
+templateUrl: es la direccion donde se encuentra el html
+styleUrls: es la hoja de estilos
+
+dentro de src una carpeta por cada componente
+
+------------------
+
+app.component.html = es el body
+Index.html = es solo el header
+app.component.ts = es el controlador
+
+------------------
+
+ng serve escucha el puerto 4200 
+para cambiarle el puerto... ng serve --port5000
+
+netstat 			para ver los puertos
+netstat -ano 			para ver mejor los puertos
+netstat -ano | findstr :5000 	para ver especificamente un puerto
+taskkill /PID 4452 /F 		para matar el proceso(pid) del puerto
+
+------------------
+
+
+ng g component nombre = crea el componente
+
+
+ngFor="let i of profesorado; let x = index" = index es el numero en el que se encuentra, i hace referencia al profesorado
