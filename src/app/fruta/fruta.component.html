@@ -2,6 +2,6 @@
 <input type="text" [(ngModel)]="color_seleccionado"/>   
 <!-- cambia el color en timepo de ejecucion -->
 <pre [style.border]="color_seleccionado=='red' ? '2px solid red' : '2px solid black'">{{color_seleccionado}}</pre>
-<!-- si colore seleccionado es = red entonces ... or ...  -->
+<!-- si color seleccionado es = red entonces ... or ...  -->
 <!-- forma de poner un if y un else -->
 <p [ngStyle]="{'color': color_seleccionado}"><strong>Este texto se colorea segun el input</strong></p>

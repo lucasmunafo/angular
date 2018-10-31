@@ -56,5 +56,19 @@
     <strong>No eres el Administrador</strong>
 
   </div>
+
+  <h3>Json ID</h3>
+  <ul>
+    <span *ngIf="posts; else cargando">
+      <li *ngFor="let i of posts" (click)="showContent()">ID {{i.id}}:{{i.title}}
+         <p *ngIf="content">
+           Contenido: {{i.body}}
+         </p>
+    </span>
+    <ng-template #cargando>Cargando contenido...</ng-template>
+    
+    
+  </ul>
+  
   
 </ng-template>

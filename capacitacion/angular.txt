@@ -56,3 +56,17 @@ ng g component nombre = crea el componente
 
 
 ngFor="let i of profesorado; let x = index" = index es el numero en el que se encuentra, i hace referencia al profesorado
+
+
+
+------------------
+
+
+
+npm instal --saver Componente-compat@latest
+
+
+http://jsonplaceholder.typicode.com/
+
+
+sergio.martinez@gmail.com

@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { routing, appRoutingProviders} from './app.routing';
+import { routing, appRoutingProviders} from './app.routing'; //ruteado
+import { HttpClientModule } from '@angular/common/http'; //para usar peticiones http
 import { AppComponent } from './app.component';
 import { ProfesorComponent } from './profesor/profesor.component';
 import { FrutaComponent } from './fruta/fruta.component';
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    HttpClientModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

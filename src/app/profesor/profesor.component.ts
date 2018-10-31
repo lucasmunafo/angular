@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Profesor } from './profesor';
+import { PeticionesService } from '../services/peticiones.service';
 
 @Component({
   selector: 'app-profesor',
   templateUrl: './profesor.component.html',
-  styleUrls: ['./profesor.component.css']
+  styleUrls: ['./profesor.component.css'],
+  providers: [PeticionesService]
 })
 export class ProfesorComponent implements OnInit {
 
@@ -21,8 +23,20 @@ export class ProfesorComponent implements OnInit {
     //PARA BOTON ADMIN
     public admin: boolean;
 
+    //Para guardar el json
 
-  constructor(){
+    public posts;
+
+    //showcontent
+
+    public content:boolean;
+
+
+    //----------------------------CONSTRUCTOR----------------------------------
+    //el primero que se ejecuta
+  constructor(
+    private _peticionesService:PeticionesService,
+  ){
     this.nombre= 'Lucas';
     this.edad= 21;
     this.casado=false;
@@ -39,14 +53,31 @@ export class ProfesorComponent implements OnInit {
     this.color='red';
 
     this.admin=false;
+
+    this.content=false;
 }
 
   ngOnInit(): void {
-    console.log(this.profesor);
+    // console.log(this.profesor);
+    this._peticionesService.getPost().subscribe(
+      res => {
+        this.posts=res;
+        if(!this.posts)
+          console.log("Respuesta Vacia de la API");
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
+
   }
 
   pulsarBoton(){
     console.log("Hemos pulsado el boton");
     this.admin=!this.admin;
+    }
+
+    showContent(){
+      this.content=!this.content;
     }
   }
